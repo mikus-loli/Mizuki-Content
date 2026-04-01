@@ -8,14 +8,11 @@ name: Trigger Main Repo Build
 on:
   push:
     branches:
-      - master  # 或你使用的主分支名称 (main/develop 等)
-    paths:
-      # 只在内容文件变化时触发,避免不必要的构建
-      - 'posts/**'
-      - 'spec/**'
-      - 'data/**'
-      - 'images/**'
-  workflow_dispatch:  # 支持手动触发
+      - main
+  repository_dispatch:  # 👈 添加这个
+    types:
+      - content-updated
+  workflow_dispatch:
 
 jobs:
   trigger:
