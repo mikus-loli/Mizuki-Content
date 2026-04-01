@@ -1,42 +1,54 @@
-# 当内容仓库有新提交时,自动触发代码仓库 (Mizuki) 的部署工作流
-# 这样可以确保内容更新后立即重新部署站点
-# 
-# 配置步骤请查看文件底部注释
-
-name: Trigger Main Repo Build
+name: Deploy to Pages Branch
 
 on:
+  # 每次推送到 `main` 分支时触发这个"工作流程"
+  # 如果你使用了别的分支名，请按需将 `main` 替换成你的分支名
   push:
-    branches:
-      - main
-  repository_dispatch:  # 👈 添加这个
-    types:
-      - content-updated
+    branches: [ main ]
+  # 允许你在 GitHub 上的 Actions 标签中手动触发此"工作流程"
+  repository_dispatch:
   workflow_dispatch:
 
+# 需要写入权限来推送到pages分支
+permissions:
+  contents: write
+
 jobs:
-  trigger:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger repository dispatch
-        uses: peter-evans/repository-dispatch@v2
+      - name: Checkout your repository using git
+        uses: actions/checkout@v4
         with:
-          token: ${{ secrets.DISPATCH_TOKEN }}
-          repository: mikus-loli/Mizuki-miku  # ⚠️ 改为你的代码仓库,格式: owner/repo
-          event-type: content-updated
-          client-payload: |
-            {
-              "ref": "${{ github.ref }}",
-              "sha": "${{ github.sha }}",
-              "message": "${{ github.event.head_commit.message }}",
-              "author": "${{ github.event.head_commit.author.name }}"
-            }
+          submodules: true  # 支持 Git Submodule 模式
+          token: ${{ secrets.GITHUB_TOKEN }}  # 自动访问同账号下的私有仓库
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.14.4
+          run_install: false
+          
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+      
+      - name: Build site
+        run: pnpm run build
+        env:
+          # 如果需要启用内容分离,取消以下注释并配置
+            ENABLE_CONTENT_SYNC: true
+            CONTENT_REPO_URL: https://github.com/mikus-loli/Mizuki-Content.git
+            USE_SUBMODULE: true
+      
+      - name: Deploy to pages branch
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: pages # 部署到pages分支
+          folder: dist # Astro默认构建输出目录
+          clean: true # 清理目标分支中的旧文件
 
-      - name: Job summary
-        run: |
-          echo "✅ Successfully triggered build for main repository" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Details:**" >> $GITHUB_STEP_SUMMARY
-          echo "- Commit: \`${{ github.sha }}\`" >> $GITHUB_STEP_SUMMARY
-          echo "- Message: ${{ github.event.head_commit.message }}" >> $GITHUB_STEP_SUMMARY
-          echo "- Author: ${{ github.event.head_commit.author.name }}" >> $GITHUB_STEP_SUMMARY
