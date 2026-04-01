@@ -1,11 +1,8 @@
-# 当内容仓库有新提交时,自动触发代码仓库 (Mizuki) 的部署工作流
-# 这样可以确保内容更新后立即重新部署站点
-# 
-# 配置步骤请查看文件底部注释
-
-name: Trigger Main Repo Build
+name: Deploy to Pages Branch
 
 on:
+  # 每次推送到 `main` 分支时触发这个"工作流程"
+  # 如果你使用了别的分支名，请按需将 `main` 替换成你的分支名
   push:
     branches:
       - master  # 或你使用的主分支名称 (main/develop 等)
@@ -17,12 +14,27 @@ on:
       - 'images/**'
   workflow_dispatch:  # 支持手动触发
 
+# 需要写入权限来推送到pages分支
+permissions:
+  contents: write
+
 jobs:
-  trigger:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger repository dispatch
-        uses: peter-evans/repository-dispatch@v2
+      - name: Checkout your repository using git
+        uses: actions/checkout@v4
+        with:
+          submodules: true  # 支持 Git Submodule 模式
+          token: ${{ secrets.GITHUB_TOKEN }}  # 自动访问同账号下的私有仓库
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
         with:
           token: ${{ secrets.DISPATCH_TOKEN }}
           repository: mikus-loli/Mizuki-miku  # ⚠️ 改为你的代码仓库,格式: owner/repo
