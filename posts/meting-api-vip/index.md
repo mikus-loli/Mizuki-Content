@@ -246,7 +246,7 @@ export const map_song_list = (song_list) => {
 3. 重启Meting-API
 
 
-:::caution[注意事项]
+:::caution[注意]
 1. 仅用于个人学习和研究使用，禁止违法用途  
 2. 若有疑问或建议，可通过博客评论区或邮箱联系博主
 :::
