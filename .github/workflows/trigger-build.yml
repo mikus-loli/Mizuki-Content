@@ -1,22 +1,22 @@
 name: Deploy to Pages Branch
 
 on:
-  # 每次推送到 `main` 分支时触发这个"工作流程"
-  # 如果你使用了别的分支名，请按需将 `main` 替换成你的分支名
   push:
     branches:
-      - master  # 或你使用的主分支名称 (main/develop 等)
+      - master
     paths:
-      # 只在内容文件变化时触发,避免不必要的构建
       - 'posts/**'
       - 'spec/**'
       - 'data/**'
       - 'images/**'
-  workflow_dispatch:  # 支持手动触发
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+  workflow_dispatch:
 
-# 需要写入权限来推送到pages分支
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   build-and-deploy:
@@ -25,27 +25,34 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
         with:
-          submodules: true  # 支持 Git Submodule 模式
-          token: ${{ secrets.GITHUB_TOKEN }}  # 自动访问同账号下的私有仓库
-      
+          submodules: true
+          fetch-depth: 0
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          
+          cache: 'pnpm'
+
+      # ✅ 修复：只保留支持的参数 version，删除无效参数
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          token: ${{ secrets.DISPATCH_TOKEN }}
-          repository: mikus-loli/Mizuki-miku  # ⚠️ 改为你的代码仓库,格式: owner/repo
-          event-type: content-updated
-          client-payload: |
-            {
-              "ref": "${{ github.ref }}",
-              "sha": "${{ github.sha }}",
-              "message": "${{ github.event.head_commit.message }}",
-              "author": "${{ github.event.head_commit.author.name }}"
-            }
+          version: 9.14.4
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build site
+        run: pnpm run build
+
+      - name: Deploy to pages branch
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: pages
+          folder: dist
+          clean: true
+          single-commit: true
 
       - name: Job summary
         run: |
