@@ -245,6 +245,7 @@ export const map_song_list = (song_list) => {
 ```
 3. 重启Meting-API
 
+### QQ音乐
 
 :::caution[注意]
 1. 仅用于个人学习和研究使用，禁止违法用途
