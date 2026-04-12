@@ -250,9 +250,6 @@ export const map_song_list = (song_list) => {
 ### QQ音乐解决方法
 1. 获取QQ音乐 Cookie
 2. 配置Meting-API QQ音乐Cookie
-
-1. 获取QQ音乐Cookie
-2. 配置Meting-API使用QQ音乐Cookie
 3. 重启Meting-API
 4. 测试播放VIP歌曲
 
