@@ -20,7 +20,7 @@ Mizuki使用了meting来提供音乐播放的功能, 但是meting默认提供的
 登录网易云网页版并点进一首歌 例如https://music.163.com/#/song?id=1842206108,按F12打开网络找到下面的Cookie 如下图
 ![（图片加载失败显示）](cookie.png "获取Cookie")
 
-2. 配置Meting-API Cookie
+2. 配置Meting-API 网易云Cookie
 打开Meting-API/src/providers/netease/util.js 替换以下内容
 :spoiler[
 ```util.js
@@ -249,7 +249,7 @@ export const map_song_list = (song_list) => {
 
 ### QQ音乐解决方法
 1. 获取QQ音乐 Cookie
-
+2. 配置Meting-API QQ音乐Cookie
 
 1. 获取QQ音乐Cookie
 2. 配置Meting-API使用QQ音乐Cookie
