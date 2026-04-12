@@ -22,8 +22,8 @@ Mizuki使用了meting来提供音乐播放的功能, 但是meting默认提供的
 
 2. 配置Meting-API 网易云Cookie
 打开Meting-API/src/providers/netease/util.js 替换以下内容
-:spoiler
-```util.js
+:spoiler[剧透内容（可包含 Markdown 语法）]
+:spoiler[```util.js
 import encrypt from './crypto.js'
 import { net_ease_anonymous_token } from './config.js'
 import { customAlphabet } from 'nanoid/non-secure'
@@ -243,7 +243,7 @@ export const map_song_list = (song_list) => {
         }
     })
 }
-```
+```]
 3. 重启Meting-API
 
 ### QQ音乐解决方法
