@@ -3,7 +3,7 @@ title: "Meting API"
 published: 2026-01-15
 pinned: false
 description: "mikus自建的Meting API"
-tags: [meting, api]
+tags: [Meting, API]
 category: "API"
 licenseName: "MIT"
 author: "mikus"

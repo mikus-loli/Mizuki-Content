@@ -3,7 +3,7 @@ title: "Github加速源"
 published: 2026-01-18
 pinned: false
 description: "mikus自建的Github加速源"
-tags: ["git", "加速"]
+tags: ["Github", "加速源"]
 category: "加速源"
 licenseName: "MIT"
 author: "mikus"

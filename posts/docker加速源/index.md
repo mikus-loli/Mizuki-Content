@@ -3,7 +3,7 @@ title: "Docker加速源"
 published: 2026-01-14
 pinned: false
 description: "mikus自建的docker加速源"
-tags: [docker, 加速]
+tags: ["Docker", "加速源"]
 category: "加速源"
 licenseName: "MIT"
 author: "mikus"

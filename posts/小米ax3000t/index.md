@@ -3,7 +3,7 @@ title: "小米ax3000t 开启ssh"
 published: 2026-01-18
 pinned: false
 description: "开启小米ax3000t的ssh功能"
-tags: ["ax3000t", "ssh"]
+tags: ["小米 AX3000T", "ssh"]
 category: "路由器"
 licenseName: "MIT"
 author: "mikus"
