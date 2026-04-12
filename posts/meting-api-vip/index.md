@@ -1,10 +1,10 @@
 ---
-title: "Meting-API 网易云VIP歌曲播放限制解决指南"
+title: "Meting-API QQ及网易云VIP歌曲播放限制解决指南"
 published: 2026-03-24
 pinned: false
-description: "Meteting-API 服务并添加网易云音乐 解决 VIP 歌曲访问限制问题"
-tags: [Meting, API, 网易云音乐, Cookie]
-category: "Meting-API"
+description: "Meteting-API 服务并添加QQ音乐、网易云音乐 解决 VIP 歌曲访问限制问题"
+tags: [Meting, API, QQ音乐, 网易云音乐]
+category: "API"
 licenseName: "MIT"
 author: "mikus"
 draft: false
@@ -245,7 +245,12 @@ export const map_song_list = (song_list) => {
 ```
 3. 重启Meting-API
 
-### QQ音乐
+### QQ音乐解决方法
+
+1. 获取QQ音乐Cookie
+2. 配置Meting-API使用QQ音乐Cookie
+3. 重启Meting-API
+4. 测试播放VIP歌曲
 
 :::caution[注意]
 1. 仅用于个人学习和研究使用，禁止违法用途
