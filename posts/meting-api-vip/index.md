@@ -249,7 +249,6 @@ export const map_song_list = (song_list) => {
 1. 获取QQ音乐 Cookie
 2. 配置Meting-API QQ音乐Cookie
 3. 重启Meting-API
-4. 测试播放VIP歌曲
 
 :::caution[注意]
 1. 仅用于个人学习和研究使用，禁止违法用途
