@@ -3,7 +3,7 @@ title: "Random-pic API-随机图片"
 published: 2026-01-15
 pinned: false
 description: "mikus自建的Random-pic API（随机图片）"
-tags: [random-pic, api]
+tags: [Random-pic, API]
 category: "API"
 licenseName: "MIT"
 author: "mikus"

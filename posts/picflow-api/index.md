@@ -3,7 +3,7 @@ title: "Picflow API"
 published: 2026-01-15
 pinned: false
 description: "mikus自建的Picflow API"
-tags: [Picflow, api]
+tags: [Picflow, API]
 category: "API"
 licenseName: "MIT"
 author: "mikus"
