@@ -63,6 +63,6 @@ https://meting.mikus.ink/api?server=netease&type=playlist&id=12990345596&auth=&r
 
 :::caution[注意]
 1. 仅用于个人学习和研究使用，禁止违法用途  
-2. 请勿滥用，否则可能会被限制访问或封禁 IP  
+2. 请勿滥用，否则可能会被限制访问或封禁 IP 
 3. 若有疑问或建议，可通过博客评论区或邮箱联系博主
 :::
