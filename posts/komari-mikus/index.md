@@ -30,7 +30,7 @@ pubDate: 2026-04-21
 
 1. 从 [Releases](https://github.com/mikus-loli/komari-mikus/releases) 页面下载最新版本的 ZIP 文件
 2. 上传到 Komari 主题
-3. 在 Komari 配置中选择 Mikus 主题
+3. 在 Komari 配置中选择 komari-mikus 主题
 
 ## 项目结构
 
