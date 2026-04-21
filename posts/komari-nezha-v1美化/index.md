@@ -3,7 +3,7 @@ title: "Komari Nezha-V1 主题美化"
 published: 2026-01-19
 pinned: false
 description: "为 Komari 的 Nezha-V1 主题提供精美的美化方案，提升面板的视觉体验"
-tags: ["Komari", "主题美化"]
+tags: ["Komari", "主题美化", "主题"]
 category: "美化"
 licenseName: "MIT"
 author: "mikus"
