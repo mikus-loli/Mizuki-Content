@@ -13,10 +13,10 @@ image: 'https://picflow-api.mikus.ink/converted/pc/webp/DC3951A8B8B1128A1F9344A5
 pubDate: 2026-04-21
 ---
 
-# 项目地址
+## 项目地址
 ::github{repo="mikus-loli/komari-mikus"}
 
-# 特性
+## 特性
 
 - 🎨 **双主题支持** - 浅色/深色主题无缝切换，支持跟随系统
 - 📊 **双视图模式** - 网格视图和表格视图自由切换
@@ -26,13 +26,13 @@ pubDate: 2026-04-21
 - 🏳️ **国旗图标** - 支持全球国家和地区旗帜显示
 
 
-# 安装
+## 安装
 
 1. 从 [Releases](https://github.com/mikus-loli/komari-mikus/releases) 页面下载最新版本的 ZIP 文件
 2. 上传到 Komari 主题
 3. 在 Komari 配置中选择 Mikus 主题
 
-# 项目结构
+## 项目结构
 
 ```
 komari-mikus/
@@ -49,7 +49,7 @@ komari-mikus/
 ├── komari-theme.json        # 主题配置
 └── README.md
 ```
-# 预览
+## 预览
 ![（图片加载失败显示）](加载.png "Komari Mikus 主题预览")
 ![（图片加载失败显示）](主页.png "Komari Mikus 主题预览")
 ![（图片加载失败显示）](详情.png "Komari Mikus 主题预览")
