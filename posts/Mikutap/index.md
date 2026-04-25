@@ -2,7 +2,7 @@
 title: "Mikutap Docker版部署指南"
 published: 2026-01-21
 pinned: false
-description: "Mikutap Docker镜像"
+description: "Mikutap 部署指南"
 tags: [Mikutap,Docker]
 category: "Mikutap"
 licenseName: "MIT"
