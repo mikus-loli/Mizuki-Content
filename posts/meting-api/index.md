@@ -64,22 +64,22 @@ Meting API 的端点格式为：
 ## 使用示例
 
 ### 获取歌单信息
-```
+```播放歌单
 https://meting.mikus.ink/api?server=netease&type=playlist&id=7326220404
 ```
 
 ### 获取单曲信息
-```
+```播放单曲
 https://meting.mikus.ink/api?server=tencent&type=song&id=004Yi5BD3ksoAN
 ```
 
 ### 获取播放链接
-```
+```链接
 https://meting.mikus.ink/api?server=netease&type=url&id=22704470
 ```
 
 ### 获取歌词
-```
+```歌词
 https://meting.mikus.ink/api?server=tencent&type=lrc&id=004Yi5BD3ksoAN
 ```
 
