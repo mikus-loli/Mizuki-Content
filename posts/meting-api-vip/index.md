@@ -1,5 +1,5 @@
 ---
-title: "Meting-API 网易云音乐VIP播放限制解决指南"
+title: "Meting-API 解决网易云音乐VIP播放限制"
 published: 2026-03-24
 pinned: false
 description: "Meteting-API 服务并添加网易云音乐 解决 VIP 歌曲访问限制问题"
