@@ -9,7 +9,7 @@ licenseName: "MIT"
 author: "mikus"
 draft: false
 date: 2026-01-15
-image: 'https://picflow-api.mikus.ink/converted/pc/webp/BADBDA3E6BBAB2789295A1E6116B101E.webp'
+image: ''
 pubDate: 2026-01-15
 ---
 # random-pic API

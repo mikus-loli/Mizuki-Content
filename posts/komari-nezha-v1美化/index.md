@@ -9,7 +9,7 @@ licenseName: "MIT"
 author: "mikus"
 draft: false
 date: 2026-01-19
-image: 'https://picflow-api.mikus.ink/converted/pc/webp/A9C86E64E5CB21B43494293A355A5391.webp'
+image: ''
 pubDate: 2026-01-19
 ---
 

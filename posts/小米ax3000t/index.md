@@ -9,7 +9,7 @@ licenseName: "MIT"
 author: "mikus"
 draft: false
 date: 2026-01-18
-image: 'https://picflow-api.mikus.ink/converted/pc/webp/854242AE890EF0AE3DED301BF9DC7FAA.webp'
+image: ''
 pubDate: 2026-01-18
 ---
 # 开启ax3000t的ssh功能
