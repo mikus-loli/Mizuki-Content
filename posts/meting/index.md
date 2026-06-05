@@ -1,7 +1,8 @@
 ---
-title: Meting-API - 多平台音乐 API 服务
-date: 2026-06-05
-description: 一个功能强大的多平台音乐 API 服务，支持网易云音乐和 QQ 音乐，提供完整的 Cookie 管理、VIP 歌曲播放、自动续期和监测通知功能
+title: "Meting-API - 多平台音乐 API 服务"
+published: 2026-06-05
+pinned: false
+description: "一个功能强大的多平台音乐 API 服务，支持网易云音乐和 QQ 音乐，提供完整的 Cookie 管理、VIP 歌曲播放、自动续期和监测通知功能"
 tags: [API,音乐,Node.js,Docker,开源项目]
 category: "mikus维护的开源项目"
 licenseName: "MIT"
