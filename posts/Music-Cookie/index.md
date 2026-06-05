@@ -1,6 +1,6 @@
 ---
 title: "Music-Cookie"
-published: 2026-06-6
+published: 2026-06-05
 pinned: false
 description: "是一个自动抓取 QQ 音乐和网易云音乐客户端 Cookie 的工具"
 tags: [Cookie,Music]
@@ -8,9 +8,9 @@ category: "mikus维护的开源项目"
 licenseName: "MIT"
 author: "mikus"
 draft: false
-date: 2026-06-6
+date: 2026-06-05
 image: ''
-pubDate: 2026-06-6
+pubDate: 2026-06-05
 ---
 
 ## 项目简介
