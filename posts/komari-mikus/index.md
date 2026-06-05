@@ -4,7 +4,7 @@ published: 2026-04-21
 pinned: false
 description: "一个现代化、优雅的 Komari 监控主题"
 tags: ["主题", "Komari"]
-category: "主题"
+category: "mikus维护的开源项目"
 licenseName: "MIT"
 author: "mikus"
 draft: false
