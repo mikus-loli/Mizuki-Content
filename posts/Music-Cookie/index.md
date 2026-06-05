@@ -2,7 +2,7 @@
 title: "Music-Cookie"
 published: 2026-06-6
 pinned: false
-description: "Music-Cookie 项目"
+description: "是一个自动抓取 QQ 音乐和网易云音乐客户端 Cookie 的工具"
 tags: [Cookie,Music]
 category: "mikus维护的开源项目"
 licenseName: "MIT"
@@ -15,7 +15,7 @@ pubDate: 2026-06-6
 
 ## 项目简介
 
-Music Cookie Manager 是一个自动抓取 QQ 音乐和网易云音乐客户端 Cookie 的工具。它通过 MITM 代理拦截客户端网络请求，提取登录凭证，并自动发送到 [Meting-API](https://github.com/mikus-loli/Meting-API) 进行统一管理。
+Music Cookie 是一个自动抓取 QQ 音乐和网易云音乐客户端 Cookie 的工具。它通过 MITM 代理拦截客户端网络请求，提取登录凭证，并自动发送到 [Meting-API](https://github.com/mikus-loli/Meting-API) 进行统一管理。
 
 **项目地址**:
 ::github{repo="mikus-loli/Music-Cookie"}
