@@ -474,8 +474,8 @@ Music-Cookie/
 
 检查 `TARGET_API_URL` 和 `TARGET_API_TOKEN` 配置是否正确。
 
-### Q: 网易云音乐抓取不到Cookie？
+### Q: 抓取不到Cookie？
 
-1. 网易云音乐需要在设置中配置代理
+1. 音乐软件需要在设置中配置代理
 2. 确保已登录账号
 3. 检查代理日志 `logs/proxy.log`
