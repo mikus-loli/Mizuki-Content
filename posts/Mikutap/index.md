@@ -92,7 +92,7 @@ docker logs mikutap
 # 预览网址
 
 - https://aidn.jp/mikutap/
-- https://mikutap.mikus.ink/ （mikus部署的Mikutap 国内访问优化）
+- https://mikutap.mikus.ink/ （mikus部署的Mikutap 国内优化）
 
 
 :::caution[注意]
