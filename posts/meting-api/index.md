@@ -2,7 +2,7 @@
 title: "Meting API"
 published: 2026-01-15
 pinned: false
-description: "mikus自建的Meting API"
+description: "mikus自建的Meting API 支持VIP哦"
 tags: [Meting, API]
 category: "API"
 licenseName: "MIT"
