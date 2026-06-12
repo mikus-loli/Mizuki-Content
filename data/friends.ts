@@ -14,16 +14,16 @@ export interface FriendItem {
 export const friendsData: FriendItem[] = [
 	{
 		id: 1,
-		title: "thoelc blog",
-		imgurl: "https://labwt.com/upload/favicon.png",
-		desc: "QAQ",
-		siteurl: "https://labwt.com",
+		title: "昆明湖 blog",
+		imgurl: "https://image.mikus.ink/uploads/HayasakaAi/2026/06/12/4e0cda919430.webp",
+		desc: "最喜欢宁宁",
+		siteurl: "https://blog.91vip.ink",
 		tags: ["Blog"],
 	},
 	{
 		id: 2,
 		title: "超天酱",
-		imgurl: "https://www.pr80.bid/ctos/icon/exe.png",
+		imgurl: "https://image.mikus.ink/uploads/HayasakaAi/2026/06/12/ab3580181e65.webp",
 		desc: "超绝最可爱天使酱",
 		siteurl: "https://www.pr80.bid",
 		tags: ["Blog"],
@@ -32,7 +32,7 @@ export const friendsData: FriendItem[] = [
 	{
 		id: 3,
 		title: "璃奈的小窝",
-		imgurl: "https://easyimage.mikus.ink/i/u/2026/01/18/xksikg.webp",
+		imgurl: "https://image.mikus.ink/uploads/HayasakaAi/2026/06/12/dc8156d1b724.webp",
 		desc: "欢迎来到猪咪的小窝喵！",
 		siteurl: "https://arkn.icu/",
 		tags: ["Blog"],
@@ -41,20 +41,13 @@ export const friendsData: FriendItem[] = [
 	{
 		id: 4,
 		title: "WitchCat",
-		imgurl: "https://www.witchcat.cn/api/proxy-image?url=http%3A%2F%2F121.40.94.142%3A9000%2Fwitchcat-files%2Fsite_images%2Fprofile%2F8567d1f6-62a3-412e-b9b1-76d2f9c10c6c.jpg",
+		imgurl: "https://image.mikus.ink/uploads/HayasakaAi/2026/06/12/73c298ad44b6.webp",
 		desc: "可爱的女巫的折耳猫的小站",
 		siteurl: "https://www.witchcat.cn",
 		tags: ["Blog"],
 	},
 
-	{
-		id: 5,
-		title: "昆明湖 blog",
-		imgurl: "https://blog.91vip.ink/favicon/avatar.webp",
-		desc: "最喜欢宁宁",
-		siteurl: "https://blog.91vip.ink",
-		tags: ["Blog"],
-	},
+
 ];
 
 // 获取所有友情链接数据
