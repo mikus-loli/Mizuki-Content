@@ -14,15 +14,10 @@ pubDate: 2026-01-14
 ---
 
 # Docker加速源
-- docker hub 加速源 https://hub.docker.mikus.ink
-- elastic 加速源 https://elastic.docker.mikus.ink
-- gcr 加速源 https://gcr.docker.mikus.ink
-- ghcr 加速源 https://ghcr.docker.mikus.ink
-- k8s 加速源 https://k8s.docker.mikus.ink
-- k8s.gcr 加速源 https://k8s-gcr.docker.mikus.ink
-- mcr 加速源 https://mcr.docker.mikus.ink
-- nvcr 加速源 https://nvcr.docker.mikus.ink
-- quay 加速源 https://quay.docker.mikus.ink
+- docker hub 加速源 https://mirror.mikus.ink
+- ghcr 加速源 https://mirror.mikus.ink/ghcr.io
+- quay 加速源 https://mirror.mikus.ink/quay.io
+- k8s 加速源 https://mirror.mikus.ink/registry.k8s.io
 
 # 配置使用示例
 
@@ -37,7 +32,7 @@ sudo nano /etc/docker/daemon.json
 ```json
 {
   "registry-mirrors": [
-    "https://hub.docker.mikus.ink"
+    "https://mirror.mikus.ink"
   ]
 }
 ```
@@ -63,7 +58,7 @@ sudo service docker restart
 ```json
 {
   "registry-mirrors": [
-    "https://hub.docker.mikus.ink"
+    "https://mirror.mikus.ink"
   ]
 }
 ```
@@ -82,20 +77,17 @@ docker info --format '{{.RegistryConfig.Mirrors}}'
 
 ### 拉取 Docker Hub 镜像
 ```bash
-docker pull nginx:latest
-# 自动使用 https://hub.docker.mikus.ink 加速
-```
-
-### 拉取 GCR 镜像
-```bash
-docker pull gcr.docker.mikus.ink/google-containers/pause:3.6
-# 等同于 docker pull k8s.gcr.io/pause:3.6
+docker pull mirror.mikus.ink/nginx:latest
 ```
 
 ### 拉取 GHCR 镜像
 ```bash
-docker pull ghcr.docker.mikus.ink/microsoft/vscode:latest
-# 等同于 docker pull ghcr.io/microsoft/vscode:latest
+docker pull mirror.mikus.ink/ghcr.io/microsoft/vscode:latest
+```
+
+### 拉取 K8S 镜像
+```bash
+docker pull mirror.mikus.ink/registry.k8s.io/pause:3.8
 ```
 
 :::caution[注意]
