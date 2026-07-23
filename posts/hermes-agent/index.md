@@ -14,52 +14,54 @@ pubDate: 2026-07-23
 
 ## 前言
 
-[Hermes Agent](https://github.com/NousResearch/hermes-agent) 是由 Nous Research 开发的开源 AI 代理框架。它的 slogan 是 **"The agent that grows with you"** —— 一个能随着你的使用不断进化的智能体。
+[Hermes Agent](https://github.com/NousResearch/hermes-agent) 是 Nous Research 开源的一款 AI 代理框架，slogan 是 **"The agent that grows with you"** —— 一个越用越懂你的智能体。
 
-相比其他 AI 框架，Hermes 有几个突出的特点：
+相比其他 AI 框架，它有几个很吸引人的地方：
 
-- 🧩 **丰富的工具生态** — 浏览器自动化、终端操作、代码执行、文件管理、网页搜索……开箱即用
-- 🌐 **多平台网关** — QQ、微信、Telegram、Discord、Slack……一个 Agent 跑通所有平台
-- 🧠 **灵活的大模型接入** — 支持 OpenAI、DeepSeek、Claude、本地模型等几乎所有主流 LLM
-- 🔧 **极高的可定制性** — Persona、Skills、Plugins 体系，让 Agent 越来越懂你
+- 🧩 **开箱即用的工具集** — 浏览器操作、终端命令、代码执行、文件管理、网页搜索……拿到手就能用
+- 🌐 **多平台消息网关** — QQ、微信、Telegram、Discord、Slack，一个 Agent 同时跑在所有聊天软件里
+- 🧠 **模型自由** — OpenAI、DeepSeek、Claude，甚至本地部署的模型都能接
+- 🔧 **高度可定制** — 通过 Persona、Skills、Plugin 体系，你可以把它调教成你想要的样子
 
-这篇教程将带你从零开始部署 Hermes Agent，配置 QQ Bot，并介绍一些进阶玩法。
+接下来的内容会带你从零开始部署 Hermes，配置好 QQ Bot，再聊一些我自己踩过坑后才学会的进阶玩法。
 
-## 前置要求
+## 准备工作
 
-- 一台 Linux 服务器（Debian/Ubuntu 推荐，本文以 Debian 为例）
-- Python 3.10+
-- Node.js 18+（部分插件需要）
+开始之前，你需要准备：
+
+- 一台 Linux 服务器（Debian / Ubuntu 都行，下文以 Debian 为例）
+- Python 3.10 或更高版本
+- Node.js 18+（部分插件会用到）
 - Git
-- Docker（可选，某些功能需要）
+- Docker（可选，某些进阶功能依赖它）
 
-## 安装
+## 安装 Hermes
 
 ### 一键安装
 
-Hermes 提供了一键安装脚本：
+官方提供了一键脚本，简单粗暴：
 
 ```bash
 curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
 ```
 
-安装完成后，重启终端或重新加载环境变量：
+装完之后记得重开终端，或者手动加载一下环境变量：
 
 ```bash
 source ~/.bashrc
 ```
 
-### 验证安装
+### 验证是否装好了
 
 ```bash
 hermes --version
 ```
 
-如果看到类似 `Hermes Agent v0.19.0` 的输出，说明安装成功。
+如果输出类似 `Hermes Agent v0.19.0`，恭喜，装好了。
 
-### 从 Git 安装（推荐）
+### 从源码安装（推荐）
 
-一键安装走的是 pip，如果想获取最新的开发和修复，推荐从 Git 安装：
+一键安装走的是 pip 发布包，版本可能不是最新的。如果你想紧跟 upstream 的更新，推荐从 Git 装：
 
 ```bash
 git clone https://github.com/NousResearch/hermes-agent.git
@@ -67,21 +69,21 @@ cd hermes-agent
 pip install -e .
 ```
 
-这样以后升级只需要 `git pull` 再 `hermes update` 就好。
+这样以后升级就简单了：`git pull` 然后 `hermes update` 就行，不用重新装一遍。
 
 ## 基础配置
 
-### 配置 LLM Provider
+### 配置 LLM 模型
 
-Hermes 支持多种大模型提供商，配置非常简单：
+Hermes 支持市面上几乎所有主流模型供应商。配置方式很简单：
 
 ```bash
 hermes setup
 ```
 
-按照提示选择你的 provider（如 DeepSeek、OpenAI 等），输入 API Key 即可。
+跟着引导选你的 provider（比如 DeepSeek、OpenAI），输入 API Key 就完事了。
 
-也可以用命令行直接设置：
+如果你喜欢手写配置，也可以直接敲命令：
 
 ```bash
 hermes config set model.provider deepseek
@@ -89,31 +91,31 @@ hermes config set model.default deepseek-v4-flash
 hermes config set model.base_url https://api.deepseek.com/v1
 ```
 
-API Key 保存在 `~/.hermes/.env` 文件中：
+API Key 存在 `~/.hermes/.env` 里：
 
 ```bash
-echo 'DEEPSEEK_API_KEY=sk-your-key-here' >> ~/.hermes/.env
+echo 'DEEPSEEK_API_KEY=sk-你的密钥' >> ~/.hermes/.env
 ```
 
-### 常用配置项
+### 一些常用的配置项
 
 ```bash
-# 语言设置（中文界面）
+# 换成中文界面
 hermes config set display.language zh-cn
 
-# 终端超时时间（秒）
+# 终端命令的超时时间（秒），拉镜像慢的话可以设长一点
 hermes config set terminal.timeout 300
 
-# 开启流式输出
+# 开启流式输出，看着字一个一个打出来比较有感觉
 hermes config set display.streaming true
 
-# 会话自动重置（闲置 24 小时后）
+# 闲置超过 24 小时自动重置会话
 hermes config set session_reset.idle_minutes 1440
 ```
 
-## 配置 QQ Bot 网关
+## 配置 QQ Bot
 
-Hermes 最吸引人的功能之一就是可以通过 QQ 与你交互。
+我觉得 Hermes 最酷的功能就是能挂在 QQ 上，随时随地在手机上和它聊天。
 
 ### 安装 QQ Bot 插件
 
@@ -121,9 +123,9 @@ Hermes 最吸引人的功能之一就是可以通过 QQ 与你交互。
 hermes plugins install qqbot
 ```
 
-### 配置 QQ Bot
+### 配置
 
-编辑 `~/.hermes/config.yaml`，添加 QQ Bot 配置：
+编辑 `~/.hermes/config.yaml`，加入以下内容：
 
 ```yaml
 platforms:
@@ -131,8 +133,8 @@ platforms:
     enabled: true
     extra:
       allow_from:
-        - "你的QQ号"  # 允许谁给 Agent 发消息
-      dm_policy: allowlist  # 白名单模式
+        - "你的QQ号"  # 只允许你给 Agent 发消息
+      dm_policy: allowlist
 ```
 
 ### 启动网关
@@ -141,25 +143,23 @@ platforms:
 hermes gateway start
 ```
 
-网关会同时启动所有配置的平台连接。首次启动需要扫码登录 QQ。
+网关会同时启动所有已配置的平台连接。第一次启动需要扫码登录 QQ。
 
-### 多平台同时运行
-
-Hermes 支持一个网关同时连接多个平台。例如同时跑 QQ Bot 和微信：
+如果你还想同时跑微信或其他平台，只需要在 config 里继续加对应的配置块就行：
 
 ```yaml
 platforms:
   qqbot:
     enabled: true
-    # ... QQ Bot 配置
+    # QQ Bot 配置...
   weixin:
     enabled: true
-    # ... 微信配置
+    # 微信配置...
 ```
 
-## Docker 部署（进阶）
+## 用 Docker 部署（进阶玩法）
 
-如果你习惯用 Docker 管理服务，也可以用 Docker Compose 部署：
+用容器跑的好处是环境隔离、迁移方便。这是我的推荐配置：
 
 ```yaml
 version: '3'
@@ -177,12 +177,12 @@ services:
 ```
 
 :::tip
-挂载 Docker socket 可以让 Hermes 在容器内也管理宿主机上的 Docker 容器。
+挂载 Docker socket 之后，Hermes 在容器里也能操作宿主机上的其他容器，比如帮你重启服务、看日志什么的。
 :::
 
-## Camofox 浏览器集成
+## 配合 Camofox 浏览器
 
-Hermes 内置的浏览器工具在某些网站可能触发反爬机制。配合 Camofox 反检测浏览器可以解决这个问题。
+Hermes 自带的浏览器工具在某些网站容易被反爬拦住。配合 Camofox 反检测浏览器可以绕过这些限制。
 
 ### 部署 Camofox
 
@@ -199,17 +199,21 @@ services:
       - ./data:/root/.camofox
 ```
 
-### 配置 Hermes 使用 Camofox
+### 让 Hermes 使用它
 
 ```bash
-# 设置 Camofox 地址
+# 告诉 Hermes Camofox 的地址
 echo 'CAMOFOX_URL=http://localhost:9377' >> ~/.hermes/.env
 
-# 启用持久化会话
+# 启用会话持久化，登录状态不会丢
 hermes config set browser.camofox.managed_persistence true
 ```
 
-配置好后，所有 `browser_*` 工具会自动走 Camofox，Cookie、登录状态也不会丢失。
+配置好之后，所有的 `browser_*` 工具会自动走 Camofox，Cookie 和登录态都会保留下来。
+
+:::tip
+第一次用 Camofox 的时候，第一个标签页可能会被浏览器 warmup 杀掉。创建第二个标签页就好了。
+:::
 
 ## 升级
 
@@ -219,54 +223,49 @@ hermes config set browser.camofox.managed_persistence true
 hermes update
 ```
 
-这个命令会自动拉取最新代码、重新安装依赖。升级前会自动备份配置。
+会自动拉代码、装依赖，升级前会备份配置，不用担心搞坏。
 
-### 小版本升级
+### 先看看有没有新版本
 
 ```bash
-hermes update --check  # 先检查是否有更新
-hermes update -y       # 确认后升级，-y 跳过确认
+hermes update --check   # 先看看有没有更新
+hermes update -y        # 有的话直接升
 ```
 
 ## 常见问题
 
-### QQ Bot 发消息失败
+### QQ Bot 发不出消息
 
-确保 QQ 号已登录且网关正常运行：
+检查一下 QQ 是否还在登录状态，网关是否正常：
 
 ```bash
-hermes doctor    # 诊断工具
-hermes gateway logs  # 查看网关日志
+hermes doctor          # 跑一下诊断
+hermes gateway logs    # 看看网关日志
 ```
 
-### 网络问题导致更新失败
+### 更新时拉不下来代码
 
-国内服务器拉取 GitHub 可能较慢，可以配置代理：
+国内服务器访问 GitHub 可能比较慢，可以走代理：
 
 ```bash
-git config --global http.proxy http://your-proxy:port
+git config --global http.proxy http://你的代理地址:端口
 hermes update
 ```
 
 ### 模型返回异常
 
-检查 API Key 是否有效以及余额是否充足：
+先确认 API Key 对不对、余额够不够：
 
 ```bash
 curl -s https://api.deepseek.com/user/balance \
   -H "Authorization: Bearer $DEEPSEEK_API_KEY"
 ```
 
-## 后记
+## 最后
 
-部署完 Hermes 之后，你拥有的是一个随时待命的 AI 助手。它可以帮你：
+部署好 Hermes 之后，你就有了一个 24 小时在线、随叫随到的 AI 助手。它可以帮你写代码、查资料、管理服务器，还能挂在 QQ 和微信上随时聊天。而且它有一个不断进化的记忆系统，用得越久越懂你。
 
-- 🤖 **自动执行任务** — 写代码、查资料、管理服务器
-- 💬 **多平台聊天** — QQ、微信、Telegram 随时调用
-- 🔧 **不断进化** — Skills 和 Memory 系统让它越来越了解你
-- 🌐 **联网能力** — 搜索、抓取网页、操作浏览器
-
-这篇文章里的配置就是 Miku 自己的运行环境，跑在宁宁云香港节点上，对接了 QQ Bot 和微信网关。希望这篇教程对你有帮助喵~ 🐱
+这篇文章里写的配置，其实就是 Miku 自己的运行环境 —— 跑在宁宁云香港节点上，同时接着 QQ Bot 和微信网关。希望这篇教程对你有帮助喵~ 🐱
 
 ## 参考链接
 
