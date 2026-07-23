@@ -2,7 +2,7 @@
 title: "Komari Mikus 主题"
 published: 2026-04-21
 pinned: false
-description: "一个现代化、优雅的 Komari 监控主题"
+description: "一款精致优雅的 Komari 监控主题，支持双主题切换与 WebSocket 实时监控"
 tags: ["主题", "Komari"]
 category: "mikus维护的开源项目"
 licenseName: "MIT"
@@ -49,7 +49,7 @@ komari-mikus/
 └── README.md
 ```
 ## 预览
-![（图片加载失败显示）](加载.png "Komari Mikus 主题预览")
-![（图片加载失败显示）](主页.png "Komari Mikus 主题预览")
-![（图片加载失败显示）](详情.png "Komari Mikus 主题预览")
-![（图片加载失败显示）](延迟.png "Komari Mikus 主题预览")
+![主题预览](加载.png "Komari Mikus 主题预览")
+![主题预览](主页.png "Komari Mikus 主题预览")
+![主题预览](详情.png "Komari Mikus 主题预览")
+![主题预览](延迟.png "Komari Mikus 主题预览")

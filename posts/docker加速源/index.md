@@ -2,7 +2,7 @@
 title: "Docker加速源"
 published: 2026-01-14
 pinned: false
-description: "mikus自建的docker加速源"
+description: "mikus 自建的 Docker 镜像加速源，支持 Docker Hub、GHCR、Quay、K8s 等多个主流仓库的镜像拉取加速"
 tags: ["Docker", "加速源"]
 category: "加速源"
 licenseName: "MIT"
@@ -13,11 +13,14 @@ image: ''
 pubDate: 2026-01-14
 ---
 
-# Docker加速源
-- docker hub 加速源 https://mirror.mikus.ink
-- ghcr 加速源 https://mirror.mikus.ink/ghcr.io
-- quay 加速源 https://mirror.mikus.ink/quay.io
-- k8s 加速源 https://mirror.mikus.ink/registry.k8s.io
+# Docker 加速源
+
+国内直接拉取 Docker 镜像时常遇到速度缓慢或连接超时的问题。本文介绍的是一套自建的 Docker 镜像加速服务，覆盖 Docker Hub、GHCR、Quay、K8s 等主流仓库，可帮助大家更顺畅地拉取容器镜像。
+
+- Docker Hub 加速源 https://mirror.mikus.ink
+- GHCR 加速源 https://mirror.mikus.ink/ghcr.io
+- Quay 加速源 https://mirror.mikus.ink/quay.io
+- K8s 加速源 https://mirror.mikus.ink/registry.k8s.io
 
 # 配置使用示例
 
@@ -66,12 +69,12 @@ sudo service docker restart
 
 ## 验证配置
 
-运行以下命令验证加速源是否生效：
+运行以下命令，查看加速源是否生效：
 ```bash
 docker info --format '{{.RegistryConfig.Mirrors}}'
 ```
 
-如果输出显示配置的加速源 URL，则说明配置成功。
+如果输出显示配置的加速源 URL，说明配置成功。
 
 ## 使用示例
 
@@ -91,7 +94,7 @@ docker pull mirror.mikus.ink/registry.k8s.io/pause:3.8
 ```
 
 :::caution[注意]
-1. 仅用于个人学习和研究使用，禁止违法用途  
-2. 请勿滥用，否则可能会被限制访问或封禁 IP  
-3. 若有疑问或建议，可通过博客评论区或邮箱联系博主
+1. 本加速源仅限个人学习与研究使用，禁止用于任何违法用途  
+2. 请勿滥用，否则可能被限制访问或封禁 IP  
+3. 如有疑问或建议，欢迎通过博客评论区或邮箱联系博主
 :::

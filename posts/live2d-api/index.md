@@ -2,7 +2,7 @@
 title: "Live2D API"
 published: 2026-01-14
 pinned: false
-description: "mikus自建的live2d-api，支持 Cubism 2.x 和 Cubism 4.x 模型"
+description: "mikus 自建的 Live2D API 服务，支持 Cubism 2.x 和 4.x 模型，提供完整的 Web 管理后台与 Docker 一键部署方案"
 tags: [Live2D, API]
 category: "API"
 licenseName: "MIT"
@@ -15,7 +15,9 @@ pubDate: 2026-06-5
 
 # Live2D API
 
-Live2D 看板娘插件后端 API，支持 Cubism 2.x 和 Cubism 4.x 模型，提供完整的 Web 管理后台和 Docker 部署方案。
+本 API 是专为 Live2D 看板娘插件设计的后端服务，旨在为您的网站或博客轻松增添生动可爱的 Live2D 角色交互体验。通过 HTTP 接口即可获取模型列表、切换皮肤、调整动作与表情，并内置了丰富的模型资源库，开箱即用。
+
+Live2D 看板娘插件后端 API，全面支持 Cubism 2.x 和 4.x 格式模型，提供完整的 Web 管理后台与 Docker 一键部署方案。
 
 ::github{repo="mikus-loli/live2d_api"}
 
@@ -23,7 +25,7 @@ Live2D 看板娘插件后端 API，支持 Cubism 2.x 和 Cubism 4.x 模型，提
 
 ## 可用模型
 
-以下是目前 API 支持的部分模型列表（来自 [live2d.mikus.ink](https://live2d.mikus.ink/)）：
+以下是 API 当前提供的部分模型清单（数据来自 [live2d.mikus.ink](https://live2d.mikus.ink/)）：
 
 | 模型名称 | 皮肤数量 | 模型名称 | 皮肤数量 |
 |---------|---------|---------|---------|
@@ -49,8 +51,8 @@ Live2D 看板娘插件后端 API，支持 Cubism 2.x 和 Cubism 4.x 模型，提
 | 鸠 | 1 | | |
 
 :::caution[注意]
-1. 仅用于个人学习和研究使用，禁止违法用途  
-2. 请勿滥用，否则可能会被限制访问或封禁 IP  
-3. 若有疑问或建议，可通过博客评论区或邮箱联系博主
-4. 模型版权归原作者所有 
+1. 仅供个人学习和研究使用，禁止用于任何违法用途
+2. 请勿滥用或高频调用，否则可能被限制访问或封禁 IP
+3. 如有疑问或建议，欢迎通过博客评论区或邮箱联系博主
+4. 所有模型版权归原作者所有
 :::

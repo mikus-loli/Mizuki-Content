@@ -2,7 +2,7 @@
 title: "Mikutap Docker版部署指南"
 published: 2026-01-21
 pinned: false
-description: "Mikutap 部署指南"
+description: "Mikutap Docker 部署指南 — 一键搭建初音未来风格电音交互页面，支持自定义构建与国内镜像加速"
 tags: [Mikutap,Docker]
 category: "Mikutap"
 licenseName: "MIT"
@@ -12,18 +12,19 @@ date: 2026-01-21
 image: ''
 pubDate: 2026-01-21
 ---
+
 # 项目地址
 ::github{repo="AkariRin/mikutap"}
 
 # 介绍
-Mikutap 是由日本知名 Vocaloid 音乐人*daniwell*开发的一款极简交互式声音艺术装置，灵感来源于 Patatap，核心特点是无需任何音乐基础，通过简单的点击操作就能生成初音未来风格的电音旋律，配合绚丽的粒子动画，带来极致的解压体验。它没有复杂的规则，没有失败惩罚，只有纯粹的创作乐趣和感官享受。 miku厨狂喜
+Mikutap 是由日本知名 Vocaloid 音乐人 *daniwell* 开发的一款极简交互式声音艺术装置，灵感来源于 Patatap。其核心特点是无需任何音乐基础，只需通过简单的点击操作就能生成初音未来风格的电音旋律，配合绚丽的粒子动画，带来极致的解压体验。它没有复杂的规则，没有失败的惩罚，只有纯粹的创作乐趣与感官享受。miku厨狂喜
 
 # 使用方法
 :::caution[注意]
-部署前需确保服务器/本地已安装Docker和Docker Compose
+部署前需确保服务器/本地已安装 Docker 和 Docker Compose
 :::
-## 1.使用mikus构建好的镜像 （推荐）
-1. 创建docker-compose.yml文件
+## 1. 使用 mikus 构建好的镜像（推荐）
+1. 创建 docker-compose.yml 文件
 ```docker compose
 services:
   mikutap:
@@ -38,7 +39,7 @@ services:
 docker compose up -d
 ```
 
-## 2.自己构建镜像
+## 2. 自己构建镜像
 1. 编写 Dockerfile
 ```Dockerfile
 # 基于官方轻量Nginx镜像（Alpine版本体积更小）
@@ -92,11 +93,11 @@ docker logs mikutap
 # 预览网址
 
 - https://aidn.jp/mikutap/
-- https://mikutap.mikus.ink/ （mikus部署的Mikutap 国内优化）
+- https://mikutap.mikus.ink/（mikus 部署的 Mikutap，国内网络优化）
 
 
 :::caution[注意]
-1. 仅用于个人学习和研究使用，禁止违法用途  
-2. 请勿滥用，否则可能会被限制访问或封禁 IP  
-3. 若有疑问或建议，可通过博客评论区或邮箱联系博主
+1. 仅供个人学习和研究使用，禁止用于违法用途  
+2. 请勿滥用，否则可能被限制访问或封禁 IP  
+3. 如有疑问或建议，可通过博客评论区或邮箱联系博主
 :::

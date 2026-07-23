@@ -2,7 +2,7 @@
 title: "Meting-API 解决网易云音乐VIP播放限制"
 published: 2026-03-24
 pinned: false
-description: "Meteting-API 服务并添加网易云音乐 解决 VIP 歌曲访问限制问题"
+description: "通过 Meting-API 配置网易云音乐 Cookie，解决 VIP 歌曲的播放限制问题"
 tags: [Meting, API, 网易云音乐]
 category: "API"
 licenseName: "MIT"
@@ -13,15 +13,15 @@ image: ''
 pubDate: 2026-03-24
 ---
 # 前言
-Mizuki使用了meting来提供音乐播放的功能, 但是meting默认提供的API有抽风/下线/跑路的风险, 而且最重要的是: 播放不了VIP歌曲，网易云大部分的歌曲都需要VIP
+Mizuki 使用 meting 来提供音乐播放功能，但 meting 默认提供的 API 存在不稳定、下线或无人维护的风险。而最关键的问题是：它无法播放 VIP 歌曲，而网易云音乐上大部分歌曲都需要 VIP 才能播放。
 
 ## 网易云解决方法
 #### 1. 获取网易云音乐 Cookie
-登录网易云网页版并点进一首歌 例如 https://music.163.com/#/song?id=1842206108 按F12打开网络找到下面的Cookie 如下图
+登录网易云网页版并进入一首歌的页面，例如 https://music.163.com/#/song?id=1842206108。按 F12 打开开发者工具，在网络面板中找到 Cookie，如下图所示
 ![（图片加载失败显示）](cookie.png "获取Cookie")
 
-#### 2. 配置Meting-API 网易云Cookie
-打开Meting-API/src/providers/netease/util.js 替换以下内容
+#### 2. 配置 Meting-API 的网易云 Cookie
+打开 `Meting-API/src/providers/netease/util.js`，替换以下内容
 ```util.js
 import encrypt from './crypto.js'
 import { net_ease_anonymous_token } from './config.js'
@@ -243,9 +243,9 @@ export const map_song_list = (song_list) => {
     })
 }
 ```
-#### 3. 重启Meting-API
+#### 3. 重启 Meting-API
 
 :::caution[注意]
-1. 仅用于个人学习和研究使用，禁止违法用途
-2. 若有疑问或建议，可通过博客评论区或邮箱联系博主
+1. 仅用于个人学习和研究，禁止用于违法用途
+2. 如有疑问或建议，欢迎通过博客评论区或邮箱联系博主
 :::

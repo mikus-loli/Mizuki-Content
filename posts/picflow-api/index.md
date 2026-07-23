@@ -2,7 +2,7 @@
 title: "Picflow API"
 published: 2026-01-15
 pinned: false
-description: "mikus自建的Picflow API"
+description: "Mikus 自建的智能图片服务 API，支持格式转换、设备自适应与外链模式"
 tags: [Picflow, API]
 category: "API"
 licenseName: "MIT"
@@ -17,7 +17,7 @@ pubDate: 2026-01-15
 PicFlow API 地址: https://picflow-api.mikus.ink
 
 ## 接口用法
-PicFlow API 是一个智能图片服务API，支持多种图片格式转换、设备自适应和外链模式。
+PicFlow API 是一款智能图片服务接口，支持多种图片格式转换、设备自适应以及外链模式。
 
 ### 请求地址
 ```
@@ -71,12 +71,12 @@ GET /api_v2.php?type=pe&return=redirect
 GET /api_v2.php?img_format=avif&count=3
 ```
 ### 2. 外链模式
-外链模式从预配置的外部链接获取图片，适用于CDN或第三方图片服务。
+外链模式从预配置的外部链接获取图片，适用于 CDN 或第三方图片服务。
 
 配置文件
 pc.txt: 桌面端图片链接列表
 pe.txt: 移动端图片链接列表
-每行一个图片URL，支持任何可访问的图片链接。
+每行一个图片 URL，支持任意可访问的图片链接地址。
 
 请求示例
 ```
@@ -153,30 +153,30 @@ JSON响应 (默认)
 }
 ```
 TEXT响应
-当 format=text 或 format=url 时，返回纯文本格式：
+当 `format=text` 或 `format=url` 时，以纯文本形式返回图片 URL 列表：
 ```
 https://example.com/converted/pc/webp/image1.webp
 https://example.com/converted/pc/webp/image2.webp
 ```
 重定向响应
-当 return=redirect 且 count=1 时，直接重定向到图片URL：
+当 `return=redirect` 且 `count=1` 时，直接重定向到图片 URL：
 ```
 HTTP/1.1 302 Found
 Location: https://example.com/converted/pc/webp/image1.webp
 ```
 ## 智能格式检测
-API会根据用户的浏览器User-Agent自动检测支持的最优图片格式：
+API 会根据用户浏览器的 User-Agent 自动检测支持的最优图片格式：
 
 ### 支持的格式优先级
-1. AVIF - 最新格式，文件最小
+1. AVIF — 最新格式，文件体积最小
    - Chrome 85+
    - Firefox 93+
-2. WebP - 广泛支持，优秀压缩
-   - Chrome (所有版本)
+2. WebP — 广泛支持，压缩效果优秀
+   - Chrome（所有版本）
    - Firefox
    - Edge
    - Safari 14+
-3. JPEG - 兜底格式，最佳兼容性
+3. JPEG — 兜底格式，兼容性最佳
    - 所有浏览器
 
 ### 格式检测示例
@@ -206,18 +206,18 @@ GET /api_v2.php?img_format=webp
 | 外链文件不存在: pc.txt | 外链模式配置文件缺失 | 创建对应的.txt配置文件 |
 | 外链文件中没有有效的链接 | 配置文件为空或格式错误 | 检查.txt文件内容格式 |
 ## 性能优化建议
-1. 图片预处理
-提前将图片转换为多种格式 (JPEG/WebP/AVIF)
-按设备类型优化图片尺寸
-使用适当的压缩质量
-2. 缓存策略
-启用浏览器缓存
-使用CDN加速图片分发
-考虑服务端缓存API响应
-3. 外链模式优化
-使用高性能的图片CDN
-定期检查外链有效性
-合理配置链接数量
+1. **图片预处理**
+   提前将图片转换为多种格式（JPEG/WebP/AVIF）
+   按设备类型优化图片尺寸
+   使用适当的压缩质量
+2. **缓存策略**
+   启用浏览器缓存
+   使用 CDN 加速图片分发
+   考虑服务端缓存 API 响应
+3. **外链模式优化**
+   使用高性能图片 CDN
+   定期检查外链有效性
+   合理配置链接数量
 ## 使用示例
 JavaScript调用
 ```javascript
@@ -257,7 +257,7 @@ HTML直接使用
 ```
 
 :::caution[注意]
-1. 仅用于个人学习和研究使用，禁止违法用途  
+1. 仅用于个人学习和研究，禁止用于违法用途  
 2. 请勿滥用，否则可能会被限制访问或封禁 IP  
 3. 若有疑问或建议，可通过博客评论区或邮箱联系博主
 :::

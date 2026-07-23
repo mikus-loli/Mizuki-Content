@@ -2,7 +2,7 @@
 title: "Komari Nezha-V1 主题美化"
 published: 2026-01-19
 pinned: false
-description: "为 Komari 的 Nezha-V1 主题提供精美的美化方案，提升面板的视觉体验"
+description: "为 Komari 的 Nezha-V1 主题打造一套精致的美化方案，全面提升面板的视觉体验"
 tags: ["Komari", "主题美化", "主题"]
 category: "美化"
 licenseName: "MIT"
@@ -17,8 +17,8 @@ pubDate: 2026-01-19
 
 ## 原项目
 ::github{repo="Akizon77/nezha-dash-v1"}
-感谢 *Akizon77* 大佬的移植 和 *まも* 大佬的美化\
-mikus在 *まも* 大佬的基础上进行了一些修改，添加了一些新的功能
+感谢 *Akizon77* 大佬的移植以及 *まも* 大佬的美化\\
+mikus在 *まも* 大佬的基础上进行了一番调整，并添加了一些新功能
 ## 美化内容
 ### 1. 樱花飘落特效
 ```html
