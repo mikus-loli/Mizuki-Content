@@ -12,15 +12,16 @@ date: 2026-03-24
 image: ''
 pubDate: 2026-03-24
 ---
-# 前言
+# Meting-API 解决网易云音乐VIP播放限制
 Mizuki 使用 meting 来提供音乐播放功能，但 meting 默认提供的 API 存在不稳定、下线或无人维护的风险。而最关键的问题是：它无法播放 VIP 歌曲，而网易云音乐上大部分歌曲都需要 VIP 才能播放。
 
 ## 网易云解决方法
-#### 1. 获取网易云音乐 Cookie
+### 1. 获取网易云音乐 Cookie
+
 登录网易云网页版并进入一首歌的页面，例如 https://music.163.com/#/song?id=1842206108。按 F12 打开开发者工具，在网络面板中找到 Cookie，如下图所示
 ![（图片加载失败显示）](cookie.png "获取Cookie")
 
-#### 2. 配置 Meting-API 的网易云 Cookie
+### 2. 配置 Meting-API 的网易云 Cookie
 打开 `Meting-API/src/providers/netease/util.js`，替换以下内容
 ```util.js
 import encrypt from './crypto.js'
@@ -243,7 +244,7 @@ export const map_song_list = (song_list) => {
     })
 }
 ```
-#### 3. 重启 Meting-API
+### 3. 重启 Meting-API
 
 :::caution[注意]
 1. 仅用于个人学习和研究，禁止用于违法用途

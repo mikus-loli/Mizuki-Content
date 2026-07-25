@@ -13,7 +13,7 @@ image: ''
 pubDate: 2026-01-19
 ---
 
-# Komari-Nezha-V1 主题美化
+# Komari Nezha-V1 主题美化
 
 ## 原项目
 ::github{repo="Akizon77/nezha-dash-v1"}
@@ -340,7 +340,7 @@ mikus在 *まも* 大佬的基础上进行了一番调整，并添加了一些�
 ![加载](加载.png)
 ![主页](Nezha.png)
 
-# 使用方式
+## 使用方式
 - 下载 [komari-nezha-v1美化.zip](https://mirror.mikus.ink/https://github.com/mikus-loli/nezha-dash-v1/releases/download/miku/NezhaV1.zip)
 - 在komari 主题管理中导入主题
 - 启用主题

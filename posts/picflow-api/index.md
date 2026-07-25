@@ -13,7 +13,7 @@ image: ''
 pubDate: 2026-01-15
 ---
 
-# PicFlow API
+# Picflow API
 PicFlow API 地址: https://picflow-api.mikus.ink
 
 ## 接口用法
@@ -24,7 +24,7 @@ PicFlow API 是一款智能图片服务接口，支持多种图片格式转换�
 GET /api_v2.php
 ```
 ## 请求参数
-#### 基础参数
+### 基础参数
 | 参数名 | 类型 | 默认值 | 说明 |
 | :----- | :------: | :-----: | :----- |
 | count | int | 1 | 返回图片数量，范围: 1-50 |
@@ -32,11 +32,11 @@ GET /api_v2.php
 | format | string | json | 响应格式: json / text / url |
 | return | string | json | 返回类型: json / redirect(直接重定向到图片) |
 
-#### 图片格式参数
+### 图片格式参数
 | 参数名 | 类型 | 默认值 | 说明 |
 | :----- | :------: | :-----: | :----- |
 | img_format | string | auto | 图片格式: auto(智能选择) / jpeg / webp / avif |
-#### 外链模式参数
+### 外链模式参数
 | 参数名 | 类型 | 默认值 | 说明 |
 | :----- | :------: | :-----: | :----- |
 | external | boolean | false | 外链模式: true / false / 1 / 0 |

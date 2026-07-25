@@ -13,7 +13,7 @@ image: ''
 pubDate: 2026-01-14
 ---
 
-# Docker 加速源
+# Docker加速源
 
 国内直接拉取 Docker 镜像时常遇到速度缓慢或连接超时的问题。本文介绍的是一套自建的 Docker 镜像加速服务，覆盖 Docker Hub、GHCR、Quay、K8s 等主流仓库，可帮助大家更顺畅地拉取容器镜像。
 
@@ -22,7 +22,7 @@ pubDate: 2026-01-14
 - Quay 加速源 https://mirror.mikus.ink/quay.io
 - K8s 加速源 https://mirror.mikus.ink/registry.k8s.io
 
-# 配置使用示例
+## 配置使用示例
 
 ## Linux/Mac 系统配置
 

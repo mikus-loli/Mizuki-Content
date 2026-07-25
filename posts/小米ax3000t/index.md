@@ -12,7 +12,7 @@ date: 2026-01-18
 image: ''
 pubDate: 2026-01-18
 ---
-# 小米 AX3000T 开启 SSH 功能
+# 小米ax3000t 开启ssh
 ## 方案一
 ### 1.开启ssh
 :::caution[注意]
@@ -60,7 +60,7 @@ curl -kfsSL -O https://cdn.jsdelivr.net/gh/lemoeo/AX6S@main/auto_ssh.sh && chmod
 4. 如果不需要自动开启 SSH 服务，使用命令移除开机自启动
 ./auto_ssh.sh uninstall
 ```
-# 方案二
+## 方案二
 ::github{repo="openwrt-xiaomi/xmir-patcher"}
 1. 下载 xmir-patcher
 2. 将路由器恢复出厂设置，完成初始化配置。解压 xmir-patcher，Windows 运行 run.bat，Linux 运行 run.sh。

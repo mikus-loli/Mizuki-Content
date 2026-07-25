@@ -13,7 +13,7 @@ image: ''
 pubDate: 2026-01-29
 ---
 
-# Umami Docker 部署指南
+# Umami Docker 部署
 
 ## 项目介绍
 

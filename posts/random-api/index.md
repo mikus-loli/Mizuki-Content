@@ -13,13 +13,13 @@ image: ''
 pubDate: 2026-01-15
 ---
 
-# random-pic API
+# Random-pic API-随机图片
 
 random-pic 是一个轻量、快速的随机图片 API 服务，由 Mikus 自建并维护。通过简单的 HTTP 请求即可获取一张随机图片，适合用作网站背景、个人项目占位图、Demo 开发测试等场景。
 
 **API 地址**: https://random.mikus.ink
 
-# 接口用法
+## 接口用法
 
 ## 横屏图片
 

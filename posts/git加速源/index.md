@@ -13,7 +13,7 @@ image: ''
 pubDate: 2026-01-18
 ---
 
-# GitHub 加速源
+# Github加速源
 
 由于国内网络环境限制，直接访问 GitHub 下载 Releases 资源、获取 Raw 文件或执行 `git clone` 往往速度缓慢甚至超时。mikus 搭建了一套基于 `mirror.mikus.ink` 的反向代理加速服务，只需在原始 GitHub 链接前加上镜像前缀即可享受高速下载。
 
