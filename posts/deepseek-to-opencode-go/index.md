@@ -134,8 +134,6 @@ $60/月的额度，用 DeepSeek V4 Flash 这种轻量模型基本**用不完**�
 
 如果你现在还在用 DeepSeek 官方 API 做编程辅助，建议你算算账——大概率 OpenCode Go 更划算。
 
-:::tip
-通过我的推荐链接订阅 OpenCode Go，你和我的账户都能获得 **$5 使用额度**，用于抵扣你的 Go 使用限额：
-[opencode.ai/go?ref=09085J0PTV](https://opencode.ai/go?ref=09085J0PTV)
-首月仅 $5，没有长期合约，随时可取消。
-:::
+> **💡 推荐：** 通过我的推荐链接订阅 OpenCode Go，你和我的账户都能获得 **$5 使用额度**，用于抵扣你的 Go 使用限额：
+> [opencode.ai/go?ref=09085J0PTV](https://opencode.ai/go?ref=09085J0PTV)
+> 首月仅 $5，没有长期合约，随时可取消。
